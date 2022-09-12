@@ -1,5 +1,5 @@
 {% set name = "scalene" %}
-{% set version = "1.5.10" %}
+{% set version = "1.5.11" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   # See https://pypi.org/project/scalene/#files
-  sha256: 8e2e2ae14acdca56d5bbf33e158814702410f0a72d4e690fce837b811ffadbfc
+  sha256: f6fe39ad420180d986d6f1f0f3f671e9ebe2bf61205740cd842c35a344ef1d78
 
 build:
   skip: true  # [py<38]
@@ -46,7 +46,6 @@ test:
     - pip check
     - python -m scalene --cli test/original/bm_mdp.py  # [not win]
     - python -m scalene --cli test\\original\\bm_mdp.py  # [win]
-    
 about:
   home: https://github.com/plasma-umass/scalene
   license: Apache-2.0
