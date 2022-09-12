@@ -268,4 +268,6 @@ Feedstock Maintainers
 =====================
 
 * [@emeryberger](https://github.com/emeryberger/)
+* [@jaltmayerpizzorno](https://github.com/jaltmayerpizzorno/)
+* [@sternj](https://github.com/sternj/)
 
