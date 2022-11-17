@@ -33,7 +33,7 @@ requirements:
     - rich >=9.2.0
     - cloudpickle >=1.5.0
     - pynvml >=11.0.0
-    - Jinja2
+    - jinja2
 
 test:
   imports:
