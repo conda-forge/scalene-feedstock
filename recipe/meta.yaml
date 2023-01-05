@@ -22,11 +22,12 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
-    - cython
+    - cython                                 # [build_platform != target_platform]
   host:
     - python
     - pip
     - setuptools_scm
+    - cython
     - wheel
   run:
     - python
