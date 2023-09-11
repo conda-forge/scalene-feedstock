@@ -1,5 +1,5 @@
 {% set name = "scalene" %}
-{% set version = "1.5.28" %}
+{% set version = "1.5.29" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   # See https://pypi.org/project/scalene/#files
-  sha256: f3875444c8f81159ec3d07802414dfbe06416905f99616dc26f7158fe61d8158
+  sha256: e0544ca487954d4e37208fab3babde03b7fe1f1c2a817c3cc707a457c94f7450
 
 build:
   skip: true  # [py<38]
