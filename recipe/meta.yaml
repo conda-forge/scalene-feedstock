@@ -11,7 +11,7 @@ source:
   sha256: 078a432cfdfee7ab68419caf87afba3629822afd1ca5c3b4c9d72a575b496648
 
 build:
-  skip: true  # [py<38]
+  skip: true  # [py<=38]
   number: 0
   entry_points:
     - scalene = scalene.__main__:main
