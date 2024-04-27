@@ -1,5 +1,5 @@
 {% set name = "scalene" %}
-{% set version = "1.5.39" %}
+{% set version = "1.5.40" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   # See https://pypi.org/project/scalene/#files
-  sha256: 078a432cfdfee7ab68419caf87afba3629822afd1ca5c3b4c9d72a575b496648
+  sha256: 838df363b1767e15dac6dd704a98eda6901cc35b7d9b28fdd8d35c738b07bff6
 
 build:
   skip: true  # [py<=38]
@@ -22,6 +22,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - make
     - cython                                 # [build_platform != target_platform]
