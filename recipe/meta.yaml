@@ -57,11 +57,10 @@ test:
 about:
   home: https://github.com/plasma-umass/scalene
   summary: A high-performance, high-precision CPU, GPU, and memory profiler for Python
-  license: MIT AND LGPL-3.0-only AND Apache-2.0
+  license: MIT AND Apache-2.0
   license_file:
     - LICENSE
     - vendor/Heap-Layers/COPYING
-    - vendor/Heap-Layers/NOTICE
     - vendor/printf/LICENSE
 
 extra:
