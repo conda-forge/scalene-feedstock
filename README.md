@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scalene-feedsto
 
 Home: https://github.com/plasma-umass/scalene
 
-Package license: Apache-2.0
+Package license: MIT AND LGPL-3.0-only AND Apache-2.0
 
 Summary: A high-performance, high-precision CPU, GPU, and memory profiler for Python
 
@@ -323,6 +323,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@apmorton](https://github.com/apmorton/)
 * [@emeryberger](https://github.com/emeryberger/)
 * [@jaltmayerpizzorno](https://github.com/jaltmayerpizzorno/)
 * [@sternj](https://github.com/sternj/)
