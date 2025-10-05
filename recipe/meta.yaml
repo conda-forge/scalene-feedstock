@@ -1,21 +1,19 @@
 {% set name = "scalene" %}
-{% set version = "1.5.41" %}
+{% set version = "1.5.51" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  # See https://pypi.org/project/scalene/#files
-  sha256: 6a48f1bfd428b769469ed6719317c5ab3eb955ba0bd6a76eca47e3c8483522f8
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ad33b6ce79239b5a6aff4ec78fa576fe2076b46f78c4c7e5fbc78a927b83374d
 
 build:
-  skip: true  # [py<=38]
   number: 0
   entry_points:
     - scalene = scalene.__main__:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
@@ -29,18 +27,21 @@ requirements:
   host:
     - python
     - pip
-    - setuptools_scm
+    - setuptools >=65.5.0
+    - setuptools-scm >=8
     - cython
     - wheel
   run:
     - python
     - astunparse >=1.6.3  # [py<39]
-    - rich >=9.2.0
-    - cloudpickle >=1.5.0
-    - nvidia-ml-py >=12.555.43
+    - cloudpickle >=2.2.1
+    - jinja2 >=3.0.3
+    - numpy >=1.24.0,!=1.27
+    - nvidia-ml-py >=12.555.43  # [not osx]
     - psutil >=5.9.2
-    - jinja2
-    - cython
+    - pydantic >=2.6
+    - rich >=10.7.0
+    - wheel >=0.36.1
 
 test:
   imports:
@@ -55,13 +56,16 @@ test:
     - scalene --cli test/original/bm_mdp.py
 about:
   home: https://github.com/plasma-umass/scalene
-  license: Apache-2.0
-  license_family: APACHE
-  license_file: LICENSE
   summary: A high-performance, high-precision CPU, GPU, and memory profiler for Python
+  license: MIT AND Apache-2.0
+  license_file:
+    - LICENSE
+    - vendor/Heap-Layers/COPYING
+    - vendor/printf/LICENSE
 
 extra:
   recipe-maintainers:
+    - apmorton
     - emeryberger
     - jaltmayerpizzorno
     - sternj
