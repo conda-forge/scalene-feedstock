@@ -10,7 +10,7 @@ source:
   sha256: ad33b6ce79239b5a6aff4ec78fa576fe2076b46f78c4c7e5fbc78a927b83374d
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - scalene = scalene.__main__:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
