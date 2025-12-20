@@ -1,5 +1,5 @@
 {% set name = "scalene" %}
-{% set version = "1.5.51" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ad33b6ce79239b5a6aff4ec78fa576fe2076b46f78c4c7e5fbc78a927b83374d
+  sha256: a43158fe7537b0e0db14a213e2e09692e3abf92c3e004ef2b64d8fff21049544
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - scalene = scalene.__main__:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
